@@ -1,0 +1,20 @@
+1. Go into github and create a new repo. 
+2. Go to file dir.
+
+>> 
+	git init 
+	nano README.md
+	git commit -m "initial commit"
+	git remote add origin <paste SSH key>
+	git push -u origin master
+
+>>
+
+	afterwards its just:
+
+		git add .
+		git commit -m "..."
+		git push
+
+If you fked up and made it https somehow, you can just use:
+git remote set-url origin git@github.com:USERNAME/REPOSITORY-NAME.git

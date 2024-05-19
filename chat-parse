@@ -1,0 +1,11 @@
+cromanillos@chROM:~/Desktop/asdf$ docker run --name data-engineering-postgres -e POSTGRES_PASSWORD=secret -d postgres
+
+93b06f695604595f7abfcb8755d7976ba6615e2c17a45b045421ad5d0e0bd675
+
+cromanillos@chROM:~/Desktop/asdf$ docker exec -u postgres data-engineering-postgres createdb postgres-db
+cromanillos@chROM:~/Desktop/asdf$ docker exec -it data-engineering-postgres psql -U postgres -d postgres-db
+
+psql (16.3 (Debian 16.3-1.pgdg120+1))
+Type "help" for help.
+
+postgres-db=# 

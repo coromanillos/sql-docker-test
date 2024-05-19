@@ -1,0 +1,4 @@
+# Print path of current directory (Super usefull!)
+pwd
+# Move files to other directories 
+mv <file1> <file2...> </directory-path/...>
