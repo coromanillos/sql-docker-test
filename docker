@@ -22,3 +22,20 @@ createdb
 # Name of the new database.
 postgres-db
 
+
+------
+docker exec -it data-engineering-postgres psql -U postgres -d postgres-db
+------
+# Docker cmd used to execute commands, opens an Interactive Terminal 
+# within the running container named data-engineering-postgres
+docker exec -it data-engineering-postgres 
+
+# Postgres cmd being executed within the container that launches the 
+# interactive shell for postgres
+psql
+
+# Signs me in as user postgres, with afformentioned elevated privledges.
+-U postgres
+
+# Argument passed to psql shell that specified the database to conenct to
+-d postgres-db
