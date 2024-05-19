@@ -1,0 +1,24 @@
+------
+docker run --name data-engineering-postgres -e POSTGRES_PASSWORD=secret -d
+------
+# run a docker container named 'data-engineering-postgres'
+docker run --name data-engineering-postgres
+# add the enviornment values for a password 'secret', and run this application in daemon mode.
+-e POSTGRES_PASSWORD=secret -d
+
+
+
+
+docker exec -u postgres data-engineering-postgres createdb postgres-db
+-------
+# docker cmd used to run a command in a running docker container
+docker exec 
+# Flag specifies the user as admin privledged 'postgres'
+-u postgres
+# The name of the active running container.
+data-engineering-postgres
+# postgres cmd utility for creating a new database
+createdb
+# Name of the new database.
+postgres-db
+
