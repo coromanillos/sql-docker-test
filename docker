@@ -1,5 +1,6 @@
+Starts a container running postgres with folowing enviornment values.
 ------
-docker run --name data-engineering-postgres -e POSTGRES_PASSWORD=secret -d
+docker run --name data-engineering-postgres -e POSTGRES_PASSWORD=secret -d postgres
 ------
 # run a docker container named 'data-engineering-postgres'
 docker run --name data-engineering-postgres
@@ -39,3 +40,34 @@ psql
 
 # Argument passed to psql shell that specified the database to conenct to
 -d postgres-db
+
+
+------
+# Sidenote
+------
+
+# Nano kinda stinky since no multiline comments, but at least its really easy
+# to work with via cli, so good enough for me i guess?
+
+# In the command previously where you connect to a terminal and specify
+# the username and db to connect to, you can just check the available users
+# as well as available databases within the container as you would within
+# a normal instance of postgrse. This command just saves time by doing it all
+# in one go, since at the moment it is assumed you would remember the user and db.
+
+# In practice, you might come back to it and not remember the username, which is the 
+# minimum requirement to conenct via docker. In this case, you either consult the 
+# documentation or pray to god the original creator used default 'postgres'.
+
+
+
+# Starts the docker container.
+# run & start are different. Run creates from an existing image, start creates from an 
+# already existing container that was stopped.
+docker start data-engineering-postgres 
+
+# Connect to container...
+docker exec -it data-engineering-postgres psql postres -d postgres-db
+
+# Conencts to the docker container.
+docker 
